@@ -1,4 +1,24 @@
 export const issueSchema = () => ({
+    requirements: {
+        publication: {
+            object: 'publication',
+            placeholder: 'Search for a publication...',
+            result: 'publication_id',
+            itemsList: ['id', 'title'],
+            style: 'default',
+            data: (result) => (result.id)
+        },
+        volume: {
+            object: 'volume',
+            placeholder: 'Search for a volume...',
+            result: 'volume_number',
+            itemsList: ['id', 'number'],
+            style: 'default',
+            data: (result) => (result.number),
+            requires: ['publication_id']
+        },
+    },
+
     name: {
         label: 'Issue Name',
         type: 'text',

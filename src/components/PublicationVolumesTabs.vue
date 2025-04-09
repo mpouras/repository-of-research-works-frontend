@@ -34,8 +34,8 @@
                                 <div class="mt-1 flex items-center space-x-1 text-xs font-normal leading-4 text-gray-500 gap-1">
                                     Month published
                                     <div>&middot;</div>
-                                    <!-- <span class="px-2 py-0.5 rounded-md font-semibold bg-orange-100">{{ formatMonthDate(issue.month_published) }}</span> -->
-                                    <span class="px-2 py-0.5 rounded-md font-semibold bg-orange-100">{{ issue.month_published }}</span>
+                                    <span class="px-2 py-0.5 rounded-md font-semibold bg-orange-100">{{ getMonthName(issue.month_published) }}</span>
+                                    <!-- <span class="px-2 py-0.5 rounded-md font-semibold bg-orange-100">{{ issue.month_published }}</span> -->
                                 </div>
 
                                 <router-link :to="{ name: 'Issue', params: { publicationId: issue.publication_id, volumeNumber: issue.volume_number, issueName: issue.name }}" 
@@ -54,7 +54,7 @@
 import { onMounted, ref, watch } from 'vue'
 import { TabGroup, TabList, Tab, TabPanels } from '@headlessui/vue'
 import { useIssueStore } from '../stores/issues';
-import { formatMonthDate } from '../utils/dates';
+import { getMonthName } from '../utils/dates';
 
 const props = defineProps(['publicationId', 'volumes']);
 
@@ -76,6 +76,3 @@ onMounted(() => {
     console.log(selectedVolume.value);
 });
 </script>
-
-
-<style scoped></style>

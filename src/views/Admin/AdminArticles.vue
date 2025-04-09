@@ -36,8 +36,8 @@
                             class="bg-white transition-all duration-500 hover:bg-gray-50" 
                         >
                             <td class="table-item"> {{ article.id }} </td>
-                            <td class="table-item"> {{ article.title }}</td>
-                            <td class="table-item"> {{ article.publication.title }}</td>
+                            <td class="table-item max-w-xs truncate"> {{ article.title }}</td>
+                            <td class="table-item max-w-xs truncate"> {{ article.publication.title }}</td>
                             <td class="table-item"> {{ formatDate(article.published_date) }}</td>
                             <td class="table-item"> {{ formatDate(article.created_at) }} </td>
                             <td class="flex p-5 items-center justify-center gap-0.5">

@@ -39,7 +39,7 @@
                         <tr v-for="user in users" :key="user.id"
                             class="bg-white transition-all duration-500 hover:bg-gray-50">
                             <td class="table-item"> {{ user.id }} </td>
-                            <td class="table-item capitalize"> {{ user.first_name }} {{ user.last_name }} </td>
+                            <td class="table-item capitalize max-w-xs truncate"> {{ user.first_name }} {{ user.last_name }} </td>
                             <td class="table-item"> {{ user.email }}</td>
                             <td class="table-item"> @{{ user.username }}</td>
                             <td class="table-item"> {{ formatDate(user.created_at) }} </td>

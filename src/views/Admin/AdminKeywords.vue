@@ -35,7 +35,7 @@
                             class="bg-white transition-all duration-500 hover:bg-gray-50" 
                         >
                             <td class="table-item"> {{ keyword.id }} </td>
-                            <td class="table-item">
+                            <td class="table-item max-w-xs truncate">
                                 <span v-if="editingKeyword !== keyword.id">{{ keyword.name }}</span>
                                 <input v-else v-model="keyword.name" type="text" class="input-field"/>
                             </td>

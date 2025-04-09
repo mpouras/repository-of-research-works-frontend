@@ -39,6 +39,7 @@ import { ref, onMounted } from 'vue';
 import { useUserNotificationStore } from '../stores/userNotifications';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { toast } from 'vue3-toastify';
+import { useToastStore } from '../stores/toasts';
 
 const store = useUserNotificationStore();
 const notifications = ref([]);
@@ -72,13 +73,13 @@ const handleAction = async (url, method = "POST") => {
         const data = await response.json();
 
         if (response.ok) {
-            toast.success(data.message || "Action completed successfully.");
+            useToastStore().showInstantToast(data.message || "Action completed successfully.");
         } else {
-            toast.error(data.message || "Something went wrong.");
+            useToastStore().showInstantToast(data.message || "Something went wrong.", 'error');
         }
     } catch (error) {
         console.error("Error handling action:", error);
-        toast.error(error.message);
+        useToastStore().showInstantToast(error.message, 'error');
     }
 };
 </script>

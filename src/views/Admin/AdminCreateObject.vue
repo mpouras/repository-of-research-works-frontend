@@ -11,7 +11,7 @@
         </p>
     </section>
 
-    <section v-if="schema.requirements && Object.values(defaultValues).includes(null)">
+    <section v-if="schema.requirements && Object.keys(schema.requirements).some(req => defaultValues[ schema.requirements[req].result ] === null)">
         <div v-for="req in schema.requirements">
             <AdminObjectsSyncForm 
                 v-if="defaultValues[req.result] === null && (req.requires || []).every(r => defaultValues[r] !== null)"

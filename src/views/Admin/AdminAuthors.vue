@@ -24,7 +24,7 @@
                     <thead>
                         <tr class="bg-gray-100">
                             <th scope="col" class="table-title"> ID </th>
-                            <th scope="col" class="table-title"> Name </th>
+                            <th scope="col" class="table-title max-w-xs truncate"> Name </th>
                             <th scope="col" class="table-title"> Created At </th>
                             <th scope="col" class="table-title"> Actions </th>
                         </tr>

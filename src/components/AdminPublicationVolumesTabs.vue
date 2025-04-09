@@ -66,8 +66,8 @@
                                     <div class="flex flex-col">
                                         <div><span class="font-thin">ID:</span> {{ issue.id }}</div>
                                         <div><span class="font-thin">Number:</span> {{ issue.name }}</div>
-                                        <!-- <div><span class="font-thin">Month:</span> {{ formatMonthDate(issue.month_published) }}</div> -->
-                                        <div><span class="font-thin">Month:</span> {{ issue.month_published }}</div>
+                                        <div><span class="font-thin">Month:</span> {{ getMonthName(issue.month_published) }}</div>
+                                        <!-- <div><span class="font-thin">Month:</span> {{ issue.month_published }}</div> -->
                                     </div>
                                     
                                     <BaseActionsDropdown :deleteAction="deleteAction"/>
@@ -96,7 +96,7 @@ import { TabGroup, TabList, Tab, TabPanels } from '@headlessui/vue'
 import { useIssueStore } from '../stores/issues';
 import { icons } from '../utils/icons';
 import BaseActionsDropdown from './BaseActionsDropdown.vue';
-import { formatMonthDate } from '../utils/dates';
+import { getMonthName } from '../utils/dates';
 
 const props = defineProps({
     publicationId: Number,

@@ -23,6 +23,11 @@ function formatMonthDate(monthYearString) {
     }).format(date);
 }
 
+function getMonthName(monthNumber) {
+    const date = new Date(2020, monthNumber - 1);
+    return date.toLocaleString("en-US", { month: "long" });
+}
+
 function formatDateWithDash(date) {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -67,6 +72,7 @@ function formatDateTime(dateString) {
 export {
     formatDate,
     formatMonthDate,
+    getMonthName,
     formatDateWithDash,
     formatArticleDate,
     calculateAge,

@@ -35,7 +35,7 @@
                             class="bg-white transition-all duration-500 hover:bg-gray-50" 
                         >
                             <td class="table-item"> {{ publisher.id }} </td>
-                            <td class="table-item"> {{ publisher.name }}</td>
+                            <td class="table-item max-w-xs truncate"> {{ publisher.name }}</td>
                             <td class="table-item"> {{ formatDate(publisher.created_at) }} </td>
                             <td class="flex p-5 items-center justify-center gap-0.5">
                                 <button @click="navigateToPublisher(publisher.id)" class="table-button group hover:bg-orange-600">

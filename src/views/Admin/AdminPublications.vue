@@ -37,7 +37,7 @@
                             class="bg-white transition-all duration-500 hover:bg-gray-50" 
                         >
                             <td class="table-item"> {{ publication.id }} </td>
-                            <td class="table-item"> {{ publication.title }}</td>
+                            <td class="table-item max-w-xs truncate"> {{ publication.title }}</td>
                             <td class="table-item"> {{ publication.type }}</td>
                             <td class="table-item"> {{ publication.year_published }}</td>
                             <td class="table-item"> {{ formatDate(publication.created_at) }} </td>
