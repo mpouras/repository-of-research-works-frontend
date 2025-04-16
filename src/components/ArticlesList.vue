@@ -30,22 +30,25 @@
                 Iss. {{ article.issue.name }}
             </div>
 
-            <div class="flex flex-col md:flex-row gap-2 md:items-center text-xs text-gray-600">
-                <div class="flex flex-wrap gap-2 items-center">
-                    <i :class="[icons.authorsFilled, 'mdi-18px']"></i>
-                    <a v-for="author in article.authors" class="px-2 py-0.5 rounded-md text-sm font-semibold bg-gray-200">
+            <div class="flex gap-2 items-center overflow-hidden whitespace-nowrap">
+                <i :class="[icons.authorsFilled, 'mdi-18px', 'shrink-0']"></i>
+                <div class="flex gap-2 overflow-hidden">
+                    <a
+                        v-for="author in article.authors"
+                        :key="author.id"
+                        class="px-2 py-0.5 rounded-md text-sm font-semibold bg-gray-200 whitespace-nowrap"
+                    >
                         {{ author.name }}
                     </a>
                 </div>
+            </div>
 
-                <div class="hidden md:block">&middot;</div>
 
-                <div class="flex flex-wrap gap-2 items-center">
-                    <span class="text-sm text-gray">Date Published</span>
-                    <p class="px-2 py-0.5 rounded-md text-sm font-semibold bg-orange-100">
-                        {{ formatDate(article.published_date) }}
-                    </p>
-                </div>
+            <div class="flex flex-wrap gap-2 items-center">
+                <span class="text-sm text-gray">Date Published</span>
+                <p class="px-2 py-0.5 rounded-md text-sm font-semibold bg-orange-100">
+                    {{ formatDate(article.published_date) }}
+                </p>
             </div>
 
             <div>

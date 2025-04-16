@@ -28,6 +28,6 @@ async function handleSearch() {
         props.onSearch(searchQuery.value);
     }
 
-    // searchQuery.value = '';
+    searchQuery.value = '';
 }
 </script>

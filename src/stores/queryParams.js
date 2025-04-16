@@ -16,7 +16,7 @@ export const useQueryParamsStore = defineStore('queryParamsStore', () => {
         sort_order: route.query.sort_order || defaultParams.sort_order,
     });
 
-    // THERE IS A SMALL BAG ON PAGE RETURN
+    // THERE IS A SMALL BUG ON PAGE RETURN
     watch(() => route.name, (newRouteName) => {
         const newDefaults = pageDefaultParams(newRouteName);
         Object.assign(defaultParams, newDefaults);

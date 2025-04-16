@@ -37,7 +37,7 @@
                                 <div><span class="font-thin">Year:</span> {{ selectedVolume.year_published }}</div>
                             </div>
 
-                            <BaseActionsDropdown :deleteAction="deleteAction"/>
+                            <BaseActionsDropdown :deleteAction="() => deleteVolume(selectedVolume.id)"/>
                         </div>
 
                         <h1 class="admin-title-secondary text-center my-4">Issues</h1>
@@ -70,7 +70,7 @@
                                         <!-- <div><span class="font-thin">Month:</span> {{ issue.month_published }}</div> -->
                                     </div>
                                     
-                                    <BaseActionsDropdown :deleteAction="deleteAction"/>
+                                    <BaseActionsDropdown :deleteAction="() => deleteIssue(issue.id)" />
                                 </div>
                             </div>
                         </div>
@@ -133,4 +133,12 @@ watch(() => props.volumes, async (newVolumes) => {
 watch(selectedVolume, async (newVolume) => {
     await fetchIssues(newVolume);
 });
+
+function deleteVolume(id) {
+    console.log(id)
+}
+
+function deleteIssue(id) {
+    console.log(id)
+}
 </script>

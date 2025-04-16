@@ -51,7 +51,7 @@ const results = ref({});
 const errors = ref({});
 
 const fetchSearchResults = async () => {
-    if (!props.query || props.query.length < 3) return;
+    if (!props.query || props.query.length < 2) return;
 
     await searchStore.search({
         query: props.query, 

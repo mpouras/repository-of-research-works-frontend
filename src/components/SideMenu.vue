@@ -53,8 +53,11 @@ const isSelected = (tabName) => {
     return route.name === tabName;
 };
 
+const emit = defineEmits(['navigate']);
+
 const navigate = (routeName) => {
     router.push({ name: routeName });
+    emit('navigate');
 };
 </script>
 

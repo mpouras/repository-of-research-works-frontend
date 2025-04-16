@@ -77,8 +77,10 @@ const { queryParams } = queryParamsStore;
 
 const visiblePages = computed(() => {
     const range = [];
-    const left = Math.max(2, queryParams.page - 1);
-    const right = Math.min(paginationStore.totalPages - 1, queryParams.page + 1);
+    const delta = 2;
+
+    const left = Math.max(2, queryParams.page - delta);
+    const right = Math.min(paginationStore.totalPages - 1, queryParams.page + delta);
 
     for (let i = left; i <= right; i++) {
         range.push(i);
@@ -86,6 +88,7 @@ const visiblePages = computed(() => {
 
     return range;
 });
+
 
 const scrollToTop = () => {
     window.scrollTo({
