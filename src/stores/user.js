@@ -73,7 +73,7 @@ export const useUserStore = defineStore("userStore", {
 
             if (authToken.value) {
                 try {
-                    const response = await fetch(`http://localhost/api/user/update-profile`, {
+                    const response = await fetch(`/api-2/user/update-profile`, {
                         method: 'POST',
                         headers: {
                             authorization: `Bearer ${authToken.value}`,
